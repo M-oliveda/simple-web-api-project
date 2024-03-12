@@ -1,0 +1,19 @@
+{
+  "name": "simple-web-api-project",
+  "version": "1.0.0",
+  "description": "This is the first practice project I created for the project jalasoft course.",
+  "repository": "https://github.com/M-oliveda/simple-web-api-project.git",
+  "author": "Mauricio Oliveda <maurioliveda@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "echo 'Hello World!'"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
+}
