@@ -7,13 +7,19 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "echo 'Hello World!'"
+    "test": "echo 'Hello World!'",
+    "format:check": "prettier --check './src/**/*.js'",
+    "format": "pretier './src/**/*.js'",
+    "lint": "eslint './src/**/*.js'",
+    "app": "node ./src/index.js"
   },
   "dependencies": {
-    "body-parser": "^1.20.2",
     "express": "^4.18.3"
   },
   "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
     "prettier": "^3.2.5"
   }
 }
