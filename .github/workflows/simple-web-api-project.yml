@@ -1,0 +1,33 @@
+name: Simple-Web-API-Project
+
+on:
+  push:
+    branches:
+      - "develop"
+  pull_request:
+    branches:
+      - "develop"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v3
+      - name: "Use Node ${{ matrix.node-version }}"
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - name: "Install yarn package-manager"
+      - run: "npm install --global yarn"
+
+      - name: "Install software dependencies"
+      - run: "yarn install"
