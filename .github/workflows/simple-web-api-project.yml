@@ -25,3 +25,13 @@ jobs:
         run: "npm install --global yarn"
       - name: "Install the software dependencies"
         run: "yarn install"
+
+  code-test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: "Testing format errors."
+        run: "yarn format:check"
+      - name: "Testing lint errors."
+        run: "yarn lint"
