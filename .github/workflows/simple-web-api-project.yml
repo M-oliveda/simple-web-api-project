@@ -26,8 +26,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
-      - name: "Install yarn package-manager"
+      - name: "Install yarn package-manager and the software dependencies"
       - run: "npm install --global yarn"
-
-      - name: "Install software dependencies"
       - run: "yarn install"
