@@ -45,4 +45,4 @@ jobs:
       - name: Run Docker image
         run: sudo docker run --name web-api-project  -p 5000:3500 -d ${{ secrets.DOCKERHUB_USERNAME }}/simple-web-api:v0.1.0
       - name: Test connection to the container
-        run: 'curl --header ''Content-Type: application/json'' --request POST --data "{"message":"This is a message."}" http://localhost:5000/api/secrets'
+        run: 'curl --header ''Content-Type: application/json'' --request POST --data ''{"message":"This is a message."}'' http://localhost:5000/api/secrets'
