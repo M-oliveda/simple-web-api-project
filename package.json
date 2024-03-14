@@ -12,7 +12,7 @@
     "format": "pretier './src/**/*.js'",
     "lint": "eslint './src/**/*.js'",
     "app:test": "cross-env NODE_ENV=test jest --testTimeout=10000",
-    "app": "node ./src/index.js"
+    "app": "node ./src/server.js"
   },
   "dependencies": {
     "express": "^4.18.3"
