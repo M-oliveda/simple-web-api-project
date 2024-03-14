@@ -35,3 +35,5 @@ jobs:
         run: "yarn format:check"
       - name: "Testing lint errors."
         run: "yarn lint"
+      - name: "Running api test"
+        run: "yarn app:test"
