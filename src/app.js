@@ -20,6 +20,7 @@ app.post("/api/secrets", (req, resp) => {
   secrets.set(key, message);
 
   resp.status(201);
+  resp.setHeader("Content-Type", "application/json");
   resp.send(JSON.stringify({ secretKey: key }));
 });
 
@@ -28,10 +29,12 @@ app.get("/api/secret/:secretkey", (req, resp) => {
 
   if (secrets.has(secretKey)) {
     resp.status(200);
+    resp.setHeader("Content-Type", "application/json");
     resp.send(JSON.stringify({ secretMessage: secrets.get(secretKey) }));
     secrets.delete(secretKey);
   } else {
     resp.status(404);
+    resp.setHeader("Content-Type", "application/json");
     resp.send(
       JSON.stringify({
         errorMessage: "The key was already used and it is deleted.",
@@ -40,8 +43,5 @@ app.get("/api/secret/:secretkey", (req, resp) => {
   }
 });
 
-app.listen(applicationConfigurationFile.portNumber, () =>
-  console.log(
-    `Web API created and listen on localhost:${applicationConfigurationFile.portNumber}`,
-  ),
-);
+// Export app and secrets to test:
+module.exports = { app, secrets };
