@@ -29,3 +29,15 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/simple-web-api:v0.1.0
+
+  pull-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Pull Docker image from Dockerhub
+        run: "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/simple-web-api:v0.1.0"
+      - name: Run Docker image
+        run: sudo docker run --name web-api-project  -p 5000:3500 -d simple-web-api:v0.1.0
+      - name: Test connection to the container
+        run: 'curl --header ''Content-Type: application/json'' --request POST --data "{"message":"This is a message."}"'
