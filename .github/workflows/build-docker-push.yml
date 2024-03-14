@@ -43,6 +43,6 @@ jobs:
       - name: Pull Docker image from Dockerhub
         run: "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/simple-web-api:v0.1.0"
       - name: Run Docker image
-        run: sudo docker run --name web-api-project  -p 5000:3500 -d simple-web-api:v0.1.0
+        run: sudo docker run --name web-api-project  -p 5000:3500 -d ${{ secrets.DOCKERHUB_USERNAME }}/simple-web-api:v0.1.0
       - name: Test connection to the container
         run: 'curl --header ''Content-Type: application/json'' --request POST --data "{"message":"This is a message."}"'
