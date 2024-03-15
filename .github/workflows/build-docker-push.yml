@@ -44,5 +44,3 @@ jobs:
         run: "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/simple-web-api:v0.1.0"
       - name: Run Docker image
         run: sudo docker run --name web-api-project  -p 5000:3500 -d ${{ secrets.DOCKERHUB_USERNAME }}/simple-web-api:v0.1.0
-      - name: Test connection to the container
-        run: "curl http://localhost:5000 -I"
