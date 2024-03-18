@@ -2,8 +2,7 @@
 
 TEST_URL="./src/tests/coverage/coverage-summary.json"
 
-#lines_covered="$(cat $TEST_URL | jq -r ".total.lines.pct")"
-lines_covered=20
+lines_covered="$(cat $TEST_URL | jq -r ".total.lines.pct")"
 statements_covered="$(cat $TEST_URL | jq -r ".total.statements.pct")"
 functions_covered="$(cat $TEST_URL | jq -r ".total.functions.pct")"
 
