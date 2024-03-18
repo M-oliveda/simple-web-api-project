@@ -37,7 +37,7 @@ jobs:
         run: "yarn lint"
       - name: "Running api test"
         run: "yarn app:test"
-      - name: "Create and test coverage"
-        run: |
-          "yarn app:test-coverage"
-          "sh check-coverage.sh"
+      - name: "Create code coverage"
+        run: "yarn app:test-coverage"
+      - name: "Test code coverage"
+        run: "sh check-coverage.sh"
