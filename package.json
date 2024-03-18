@@ -12,7 +12,7 @@
     "format": "pretier './src/**/*.js'",
     "lint": "eslint './src/**/*.js'",
     "app:test": "cross-env NODE_ENV=test jest --testTimeout=10000",
-    "app:test-coverage": "cross-env NODE_ENV=test jest --testTimeout=10000 --coverage --collectCoverageFrom='./src/**' --coverageDirectory='./src/tests/coverage'",
+    "app:test-coverage": "cross-env NODE_ENV=test jest --testTimeout=10000 --coverage --collectCoverageFrom='./src/*.js' --coverageDirectory='./src/tests/coverage' --coverageReporters='json-summary'",
     "app": "node ./src/server.js"
   },
   "dependencies": {
